@@ -1,0 +1,2 @@
+# Build and runtime are defined by frontend/Dockerfile.
+# The final image is nginx:stable-alpine and serves the built dist/ via nginx.conf.
