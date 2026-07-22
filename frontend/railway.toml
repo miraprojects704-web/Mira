@@ -1,2 +1,9 @@
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+# Explicitly use the Docker image runtime and start Nginx on Railway.
+startCommand = "nginx -g \"daemon off;\""
 # Build and runtime are defined by frontend/Dockerfile.
 # The final image is nginx:stable-alpine and serves the built dist/ via nginx.conf.

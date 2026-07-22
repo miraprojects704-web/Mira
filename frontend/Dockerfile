@@ -6,7 +6,7 @@ COPY package*.json ./
 RUN npm ci --legacy-peer-deps
 
 COPY . .
-ARG VITE_API_URL=http://localhost:8000
+ARG VITE_API_URL=https://mira-backend-production-8a44.up.railway.app
 ENV VITE_API_URL=${VITE_API_URL}
 RUN npm run build
 
@@ -15,6 +15,6 @@ FROM nginx:stable-alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=build /app/dist /usr/share/nginx/html
 
-EXPOSE 80
+EXPOSE 8080
 
 CMD ["nginx", "-g", "daemon off;"]
